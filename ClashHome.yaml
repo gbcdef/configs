@@ -7,10 +7,6 @@ proxies:
     type: http
     server: 192.168.2.136
     port: 7890
-    # username: username
-    # password: password
-    # tls: true # https
-    # skip-cert-verify: true
 
 proxy-groups:
   - name: Proxy
