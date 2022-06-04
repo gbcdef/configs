@@ -1,0 +1,28 @@
+proxies:
+  - name: WinServer
+    type: http
+    server: 192.168.2.5
+    port: 7890
+  - name: MacBook Air
+    type: http
+    server: 192.168.2.136
+    port: 7890
+
+proxy-groups:
+  - name: Proxy
+    type: select
+    proxies:
+      - WinServer
+  - name: auto
+    type: url-test
+    proxies:
+      - WinServer
+      - MacBook Air
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    
+rules:
+  - IP-CIDR,127.0.0.0/8,DIRECT
+  - IP-CIDR,192.168.1.0/24,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,auto
