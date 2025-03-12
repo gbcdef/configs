@@ -12,11 +12,11 @@ proxy-groups:
   - name: Proxy
     type: select
     proxies:
-      - WinServer
+      - ThinkBook
   - name: auto
     type: url-test
     proxies:
-      - WinServer
+      - ThinkBook
       - MacBook Air
     url: 'http://www.gstatic.com/generate_204'
     interval: 300
