@@ -1,5 +1,5 @@
 proxies:
-  - name: WinServer
+  - name: ThinkBook
     type: http
     server: 192.168.2.175
     port: 7891
